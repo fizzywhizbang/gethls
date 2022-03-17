@@ -4,7 +4,6 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"flag"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -15,16 +14,6 @@ const StatusUrl = "https://chaturbate.com/api/chatvideocontext/"
 var (
 	insecure = flag.Bool("insecure-ssl", false, "Accept/Ignore all server SSL certificates")
 )
-
-func main() {
-	modelFlag := flag.String("m", "none", "supply model name")
-	flag.Parse()
-	fmt.Println("Retrieving data for broadcaster:", *modelFlag)
-
-	data := GetBCStatus(*modelFlag)
-
-	fmt.Println(data.HlsSource)
-}
 
 func GetBCStatus(name string) Room {
 	url := StatusUrl + name + "/"

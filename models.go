@@ -1,4 +1,4 @@
-package main
+package gethls
 
 type Room struct {
 	FanClubIsMember             bool     `json:"fan_club_is_member"`
