@@ -1,4 +1,4 @@
-package main
+package gethls
 
 import (
 	"crypto/tls"
